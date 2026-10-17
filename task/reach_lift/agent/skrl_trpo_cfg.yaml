@@ -1,0 +1,66 @@
+seed: 42
+
+models:
+  separate: True
+  policy:
+    class: GaussianMixin
+    clip_actions: False
+    clip_log_std: True
+    min_log_std: -20.0
+    max_log_std: 2.0
+    initial_log_std: 0.0
+    network:
+      - name: net
+        input: OBSERVATIONS
+        layers: [64, 64]
+        activations: elu
+    output: ACTIONS
+  value:
+    class: DeterministicMixin
+    clip_actions: False
+    network:
+      - name: net
+        input: OBSERVATIONS
+        layers: [64, 64]
+        activations: elu
+    output: ONE
+
+memory:
+  class: RandomMemory
+  memory_size: -1
+
+agent:
+  class: TRPO
+  rollouts: 24
+  learning_epochs: 5
+  mini_batches: 4
+  discount_factor: 0.99
+  lambda: 0.95
+  learning_rate: 1.0e-03
+  state_preprocessor: RunningStandardScaler
+  state_preprocessor_kwargs: null
+  value_preprocessor: RunningStandardScaler
+  value_preprocessor_kwargs: null
+  random_timesteps: 0
+  learning_starts: 0
+  grad_norm_clip: 1.0
+  value_loss_scale: 1.0
+  damping: 0.1
+  max_kl_divergence: 0.01
+  conjugate_gradient_steps: 10
+  max_backtrack_steps: 10
+  accept_ratio: 0.5
+  step_fraction: 1.0
+  time_limit_bootstrap: False
+  rewards_shaper_scale: 1.0
+  # logging and checkpoint
+  experiment:
+    directory: "rb5_850_reach_lift"
+    experiment_name: "trpo"
+    write_interval: auto
+    checkpoint_interval: auto
+
+trainer:
+  class: SequentialTrainer
+  timesteps: 24000
+  environment_info: log

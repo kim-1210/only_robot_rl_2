@@ -1,0 +1,3 @@
+from .cfg_settings import ReachLiftImitationCFG, ReachLiftImitationEnv
+
+ReachLiftImitationEnvCfg = ReachLiftImitationCFG

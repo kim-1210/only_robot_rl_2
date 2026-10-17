@@ -1,0 +1,65 @@
+# Local research notes and unpublished work
+/가장잘맞는 값.md
+/해야할거.md
+/해야할거.pdf
+/matched_policy_sweep_comparison.md
+/matched_policy_sweep_comparison.md.bak_20260724_1038
+/ppo_test_comparison.md
+/ppo_test_comparison.md.bak_20260724_1038
+/diffusion policy논문/
+/novelty/
+
+# Python environments, caches, and build output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+/build/
+/dist/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated datasets, rollouts, and experiment output
+/datas/
+/logs/
+/outputs/
+/checkpoints/
+/artifacts/
+/runs/
+/wandb/
+**/*_artifacts*/
+/policy_models/bc/reach/reach_bc_*/
+/policy_models/bc/reach_lift/reach_bc_*/
+/policy_models/bc/reach_lift/reach_lift_bc_*/
+/policy_models/flow_match/reach_lift/reach_lift_flow_match_*/
+train_log.txt
+train_log.md
+events.out.tfevents.*
+*.log
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.npy
+*.npz
+
+# Editor backups and local installer archives
+*.bak
+*.bak_*
+*~
+*.swp
+*.swo
+/setuptools-*.zip

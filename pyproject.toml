@@ -1,0 +1,12 @@
+[project]
+name = "only-robot-rl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "setuptools==79.0.1",
+    "tensorboard>=2.20.0",
+    "torch>=2.10.0",
+    "tqdm>=4.67.3",
+]
